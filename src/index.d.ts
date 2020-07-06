@@ -424,4 +424,8 @@ export { default as SortableGrid } from './SortableGrid';
 export * from './SortableGrid';
 
 export { default as dndStyles } from './dnd-styles';
+
+export { default as MarketingPage } from './MarketingPage';
+export * from './MarketingPage';
+
 export * from './dnd-styles';
