@@ -15,7 +15,6 @@ function marketingPageLayoutWithAllProps() {
     <MarketingPageLayout
       dataHook="dataHook"
       className="className"
-      buttonText="buttonText"
     />
   );
 }

@@ -1,47 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import Text from '../Text';
-import Button from '../Button';
-import styles from './MarketingPageLayout.st.css';
-import { dataHooks } from './constants';
+import { DEFAULT_SIZE, SIZES } from './constants';
+import MarketingPageLayoutContext from './MarketingPageLayoutContext';
+import StandardLayout from './components/StandardLayout';
 
 /** Marketing Page Layout */
 class MarketingPageLayout extends React.PureComponent {
-  state = {
-    count: 0,
-  };
-
-  _handleClick = () => {
-    this.setState(({ count }) => ({
-      count: count + 1,
-    }));
-  };
-
   render() {
-    const { count } = this.state;
-    const { dataHook, buttonText } = this.props;
-    const isEven = count % 2 === 0;
-
+    const {
+      dataHook,
+      size,
+      action,
+      overline,
+      header,
+      subtitle,
+      content,
+      contentPrefixIcon,
+    } = this.props;
+    const validSize = size || SIZES[DEFAULT_SIZE];
     return (
-      <div
-        {...styles('root', { even: isEven, odd: !isEven }, this.props)}
-        data-hook={dataHook}
+      <MarketingPageLayoutContext.Provider
+        value={{
+          dataHook,
+          size: validSize,
+          overline,
+          header,
+          subtitle,
+          content,
+          contentPrefixIcon,
+        }}
       >
-        <Text dataHook={dataHooks.marketingPageLayoutCount}>
-          You clicked this button {isEven ? 'even' : 'odd'} number (
-          <span className={styles.number}>{count}</span>) of times
-        </Text>
-
-        <div className={styles.button}>
-          <Button
-            onClick={this._handleClick}
-            dataHook={dataHooks.marketingPageLayoutButton}
-          >
-            {buttonText}
-          </Button>
-        </div>
-      </div>
+        <StandardLayout />
+      </MarketingPageLayoutContext.Provider>
     );
   }
 }
@@ -55,8 +45,25 @@ MarketingPageLayout.propTypes = {
   /** A css class to be applied to the component's root element */
   className: PropTypes.string,
 
-  /** Text for the button */
-  buttonText: PropTypes.string,
+  size: PropTypes.oneOf(Object.keys(SIZES)),
+
+  /**
+   *
+   */
+  overline: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+
+  header: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+
+  subtitle: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+
+  content: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.arrayOf(PropTypes.string),
+  ]),
+
+  contentPrefixIcon: PropTypes.node,
+
+  action: PropTypes.node,
 };
 
 MarketingPageLayout.defaultProps = {};

@@ -17,6 +17,13 @@ import {
 import { storySettings } from '../test/storySettings';
 import allComponents from '../../../stories/utils/allComponents';
 
+import {
+  defaultViewport,
+  largeViewport,
+  mediumViewport,
+  smallViewport,
+} from './examples';
+
 import MarketingPageLayout from '..';
 
 const example = config => baseExample({ components: allComponents, ...config });
@@ -39,11 +46,6 @@ export default {
   },
 
   sections: [
-    header({
-      sourceUrl: `https://github.com/wix/wix-style-react/tree/master/src/${MarketingPageLayout.displayName}/`,
-      component: <MarketingPageLayout buttonText="Click me!" />,
-    }),
-
     tabs([
       tab({
         title: 'Description',
@@ -54,22 +56,50 @@ export default {
               'This line here should briefly describe component in just a sentence or two. It should be short and easy to read.',
           }),
 
-          importExample(),
+          // importExample(),
 
           divider(),
 
           title('Examples'),
 
-          example({
-            title: 'Simple Usage',
-            text: 'A simple example with compact preview',
-            source: '<MarketingPageLayout buttonText="Hello World!"/>',
+          // example({
+          //   title: 'Simple Usage',
+          //   text: 'A simple example with compact preview',
+          //   source: '<MarketingPageLayout buttonText="Hello World!"/>',
+          // }),
+
+          // code({
+          //   title: 'Full Interactive Preview',
+          //   description: 'A non compact version of same code example as above',
+          //   source: '<MarketingPageLayout buttonText="Hello World!"/>',
+          // }),
+
+          code({
+            title: 'Default Viewport',
+            description: 'TODO: add description here...',
+            compact: true,
+            source: defaultViewport,
           }),
 
           code({
-            title: 'Full Interactive Preview',
-            description: 'A non compact version of same code example as above',
-            source: '<MarketingPageLayout buttonText="Hello World!"/>',
+            title: 'Large Viewport',
+            description: 'TODO: add description here...',
+            compact: true,
+            source: largeViewport,
+          }),
+
+          code({
+            title: 'Medium Viewport',
+            description: 'TODO: add description here...',
+            compact: true,
+            source: mediumViewport,
+          }),
+
+          code({
+            title: 'Small Viewport',
+            description: 'TODO: add description here...',
+            compact: true,
+            source: smallViewport,
           }),
         ],
       }),
