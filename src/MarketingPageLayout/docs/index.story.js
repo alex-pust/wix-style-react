@@ -36,9 +36,7 @@ export default {
   component: MarketingPageLayout,
   componentPath: '..',
 
-  componentProps: {
-    buttonText: 'Hello World!',
-  },
+  componentProps: {},
 
   exampleProps: {
     // Put here presets of props, for more info:
@@ -61,18 +59,6 @@ export default {
           divider(),
 
           title('Examples'),
-
-          // example({
-          //   title: 'Simple Usage',
-          //   text: 'A simple example with compact preview',
-          //   source: '<MarketingPageLayout buttonText="Hello World!"/>',
-          // }),
-
-          // code({
-          //   title: 'Full Interactive Preview',
-          //   description: 'A non compact version of same code example as above',
-          //   source: '<MarketingPageLayout buttonText="Hello World!"/>',
-          // }),
 
           code({
             title: 'Default Viewport',

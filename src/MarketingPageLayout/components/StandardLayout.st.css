@@ -1,7 +1,7 @@
-:import {
-  -st-from: "../../Foundation/stylable/colors.st.css";
-  -st-named: P20, Y20, G20, D55, D80, G30,R30;
-}
+/*:import {*/
+/*  -st-from: "../../Foundation/stylable/colors.st.css";*/
+/*  -st-named: P20, Y20, G20, D55, D80, G30,R30;*/
+/*}*/
 
 .root {
   -st-states: size(enum(small, medium, large));
@@ -15,8 +15,9 @@
   grid-template-areas:
     "textContent imageContent"
     "actionsContent imageContent"
+    "dividerContent dividerContent"
     "footerContent footerContent";
-  background-color: value(D80);
+  /*background-color: value(D80);*/
 }
 
 .root:size(small) {
@@ -24,6 +25,7 @@
   grid-template-areas:
     "textContent"
     "actionsContent"
+    "dividerContent"
     "footerContent";
 }
 
@@ -32,7 +34,7 @@
   align-items: center;
   justify-content: center;
   grid-area: imageContent;
-  background-color: value(P20);
+  /*background-color: value(P20);*/
 }
 
 .imageContentWrapper {
@@ -50,7 +52,7 @@
   align-items: center;
   justify-content: center;
   grid-area: textContent;
-  background-color: value(G20);
+  /*background-color: value(G20);*/
 }
 
 .textContentCell:size(large), .textContentCell:size(medium) {
@@ -65,9 +67,9 @@
   -st-states: size(enum(small, medium, large));
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   grid-area: actionsContent;
-  background-color: value(G20);
+  /*background-color: value(G20);*/
 }
 
 .actionsContentCell:size(large), .actionsContentCell:size(medium) {
@@ -85,9 +87,13 @@
   align-items: flex-start;
 }
 
+.dividerContentCell {
+  grid-area: dividerContent;
+}
+
 .footerContentCell {
   grid-area: footerContent;
-  background-color: value(Y20);
+  /*background-color: value(Y20);*/
 }
 
 .placeholder {

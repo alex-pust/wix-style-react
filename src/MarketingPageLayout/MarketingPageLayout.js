@@ -16,6 +16,7 @@ class MarketingPageLayout extends React.PureComponent {
       subtitle,
       content,
       contentPrefixIcon,
+      footer,
     } = this.props;
     const validSize = size || SIZES[DEFAULT_SIZE];
     return (
@@ -30,7 +31,7 @@ class MarketingPageLayout extends React.PureComponent {
           contentPrefixIcon,
         }}
       >
-        <StandardLayout />
+        <StandardLayout footer={footer} />
       </MarketingPageLayoutContext.Provider>
     );
   }
@@ -62,6 +63,8 @@ MarketingPageLayout.propTypes = {
   ]),
 
   contentPrefixIcon: PropTypes.node,
+
+  footer: PropTypes.node,
 
   action: PropTypes.node,
 };
