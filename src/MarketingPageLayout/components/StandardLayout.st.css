@@ -92,8 +92,20 @@
 }
 
 .footerContentCell {
+  -st-states: size(enum(small, medium, large));
   grid-area: footerContent;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   /*background-color: value(Y20);*/
+}
+
+.footerContentCell:size(large), .footerContentCell:size(medium) {
+  padding: 0px 90px 0px 90px;
+}
+
+.footerContentCell:size(small) {
+  padding: 0px 30px 0px 30px;
 }
 
 .placeholder {

@@ -34,11 +34,7 @@ const StandardLayout = props => {
           <div className={styles.dividerContentCell}>
             <Divider />
           </div>
-          <div className={styles.footerContentCell}>
-            <div className={styles.placeholder}>
-              <span>Footer Content</span>
-            </div>
-          </div>
+          <div {...styles('footerContentCell', { size }, props)}>{footer}</div>
         </>
       )}
     </div>

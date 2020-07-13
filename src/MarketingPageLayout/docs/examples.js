@@ -48,8 +48,32 @@ export const largeViewport = `
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. And more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         ]}
+        contentPrefixIcon={<Icons.Check />}
         size="large"
-        footer={<div>Footer Content</div>}
+        footer={
+            <MarketingPageTestimonialsFooter
+                testimonials={[
+                  {
+                    id: '0001',
+                    avatar: <Avatar name="Guy in glasses" size="size60"/>,
+                    text: 'This is exactly what I need...',
+                    authorName: 'Guy in glasses'
+                  },
+                  {
+                    id: '0002',
+                    avatar: <Avatar name="Guy in glasses" size="size60"/>,
+                    text: 'This is exactly what I need...',
+                    authorName: 'Guy in glasses'
+                  },
+                  {
+                    id: '0003',
+                    avatar: <Avatar name="Guy in glasses" size="size60"/>,
+                    text: 'This is exactly what I need...',
+                    authorName: 'Guy in glasses'
+                  },
+                ]}
+            />
+        }
       />
     </div>
   </div>
@@ -67,7 +91,30 @@ export const mediumViewport = `
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         ]}
         size="medium"
-        footer={<div>Footer Content</div>}
+        footer={
+            <MarketingPageTestimonialsFooter
+                testimonials={[
+                  {
+                    id: '0001',
+                    avatar: <Avatar name="Guy in glasses" size="size60"/>,
+                    text: 'This is exactly what I need...',
+                    authorName: 'Guy in glasses'
+                  },
+                  {
+                    id: '0002',
+                    avatar: <Avatar name="Guy in glasses" size="size60"/>,
+                    text: 'This is exactly what I need...',
+                    authorName: 'Guy in glasses'
+                  },
+                  {
+                    id: '0003',
+                    avatar: <Avatar name="Guy in glasses" size="size60"/>,
+                    text: 'This is exactly what I need...',
+                    authorName: 'Guy in glasses'
+                  },
+                ]}
+            />
+        }
       />
     </div>
   </div>
@@ -85,7 +132,30 @@ export const smallViewport = `
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. And more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         ]}
         size="small"
-        footer={<div>Footer Content</div>}
+        footer={
+            <MarketingPageTestimonialsFooter
+                testimonials={[
+                  {
+                    id: '0001',
+                    avatar: <Avatar name="Guy in glasses" size="size60"/>,
+                    text: 'This is exactly what I need...',
+                    authorName: 'Guy in glasses'
+                  },
+                  {
+                    id: '0002',
+                    avatar: <Avatar name="Guy in glasses" size="size60"/>,
+                    text: 'This is exactly what I need...',
+                    authorName: 'Guy in glasses'
+                  },
+                  {
+                    id: '0003',
+                    avatar: <Avatar name="Guy in glasses" size="size60"/>,
+                    text: 'This is exactly what I need...',
+                    authorName: 'Guy in glasses'
+                  },
+                ]}
+            />
+        }
       />
     </div>
   </div>

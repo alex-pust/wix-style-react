@@ -14,17 +14,11 @@ import {
   testkit,
 } from 'wix-storybook-utils/Sections';
 
+import { simple } from './examples';
 import { storySettings } from '../test/storySettings';
 import allComponents from '../../../stories/utils/allComponents';
 
-import {
-  defaultViewport,
-  largeViewport,
-  mediumViewport,
-  smallViewport,
-} from './examples';
-
-import MarketingPageLayout from '..';
+import MarketingPageTestimonialsFooter from '..';
 
 const example = config => baseExample({ components: allComponents, ...config });
 const code = config => baseCode({ components: allComponents, ...config });
@@ -33,7 +27,7 @@ export default {
   category: storySettings.category,
   storyName: storySettings.storyName,
 
-  component: MarketingPageLayout,
+  component: MarketingPageTestimonialsFooter,
   componentPath: '..',
 
   componentProps: {},
@@ -44,6 +38,11 @@ export default {
   },
 
   sections: [
+    header({
+      sourceUrl: `https://github.com/wix/wix-style-react/tree/master/src/${MarketingPageTestimonialsFooter.displayName}/`,
+      component: <MarketingPageTestimonialsFooter />,
+    }),
+
     tabs([
       tab({
         title: 'Description',
@@ -54,31 +53,16 @@ export default {
               'This line here should briefly describe component in just a sentence or two. It should be short and easy to read.',
           }),
 
-          // importExample(),
+          importExample(),
 
           divider(),
 
           title('Examples'),
 
-          code({
-            title: 'Large Viewport',
-            description: 'TODO: add description here...',
-            compact: true,
-            source: largeViewport,
-          }),
-
-          code({
-            title: 'Medium Viewport',
-            description: 'TODO: add description here...',
-            compact: true,
-            source: mediumViewport,
-          }),
-
-          code({
-            title: 'Small Viewport',
-            description: 'TODO: add description here...',
-            compact: true,
-            source: smallViewport,
+          example({
+            title: 'Simple Usage',
+            text: 'A simple example with compact preview',
+            source: simple,
           }),
         ],
       }),

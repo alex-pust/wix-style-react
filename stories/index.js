@@ -85,6 +85,7 @@ require('../src/ListItemSelect/docs/index.story');
 require('../src/Loader/docs/index.story');
 require('../src/MarketingLayout/docs/index.story');
 require('../src/MarketingPageLayout/docs/index.story');
+require('../src/MarketingPageTestimonialsFooter/docs/index.story');
 require('../src/MediaOverlay/docs/index.story');
 require('../src/MessageBox/FunctionalLayout/docs/index.story');
 require('../src/MessageModalLayout/docs/index.story');

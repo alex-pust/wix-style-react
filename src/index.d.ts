@@ -424,8 +424,11 @@ export { default as SortableGrid } from './SortableGrid';
 export * from './SortableGrid';
 
 export { default as dndStyles } from './dnd-styles';
+export * from './dnd-styles';
 
 export { default as MarketingPageLayout } from './MarketingPageLayout';
 export * from './MarketingPageLayout';
 
-export * from './dnd-styles';
+export { default as MarketingPageTestimonialsFooter } from './MarketingPageTestimonialsFooter';
+export * from './MarketingPageTestimonialsFooter';
+

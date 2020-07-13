@@ -242,6 +242,9 @@
   "MarketingPageLayout": {
     "path": "src/MarketingPageLayout"
   },
+  "MarketingPageTestimonialsFooter": {
+    "path": "src/MarketingPageTestimonialsFooter"
+  },
   "MediaOverlay": {
     "path": "src/MediaOverlay"
   },
