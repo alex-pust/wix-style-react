@@ -185,6 +185,9 @@
   "Highlighter": {
     "path": "src/Highlighter"
   },
+  "HorizontalTimeline": {
+    "path": "src/HorizontalTimeline"
+  },
   "IconButton": {
     "path": "src/IconButton"
   },
@@ -379,6 +382,9 @@
     "missingFiles": [
       "docs"
     ]
+  },
+  "StarsRatingBar": {
+    "path": "src/StarsRatingBar"
   },
   "StatisticsWidget": {
     "path": "src/StatisticsWidget"
