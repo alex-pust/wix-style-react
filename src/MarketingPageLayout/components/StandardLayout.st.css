@@ -14,17 +14,14 @@
   grid-template-columns: 50% 50%;
   grid-template-areas:
     "textContent imageContent"
-    "actionsContent imageContent"
     "dividerContent dividerContent"
     "footerContent footerContent";
-  /*background-color: value(D80);*/
 }
 
 .root:size(small) {
   grid-template-columns: 50%;
   grid-template-areas:
     "textContent"
-    "actionsContent"
     "dividerContent"
     "footerContent";
 }
@@ -34,7 +31,6 @@
   align-items: center;
   justify-content: center;
   grid-area: imageContent;
-  /*background-color: value(P20);*/
 }
 
 .imageContentWrapper {
@@ -49,35 +45,34 @@
 .textContentCell {
   -st-states: size(enum(small, medium, large));
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   grid-area: textContent;
-  /*background-color: value(G20);*/
 }
 
 .textContentCell:size(large), .textContentCell:size(medium) {
-  padding: 48px 90px 42px 90px;
+  padding: 48px 90px 48px 90px;
 }
 
 .textContentCell:size(small) {
-  padding: 30px 30px 42px 30px;
+  padding: 30px 30px 30px 30px;
 }
 
-.actionsContentCell {
-  -st-states: size(enum(small, medium, large));
+.textArea {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 576px;
+}
+
+.actionsArea {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  grid-area: actionsContent;
-  /*background-color: value(G20);*/
-}
-
-.actionsContentCell:size(large), .actionsContentCell:size(medium) {
-  padding: 0px 90px 48px 90px;
-}
-
-.actionsContentCell:size(small) {
-  padding: 0px 30px 30px 30px;
+  margin-top: 42px;
 }
 
 .textContentCellContainer {
@@ -97,7 +92,6 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /*background-color: value(Y20);*/
 }
 
 .footerContentCell:size(large), .footerContentCell:size(medium) {

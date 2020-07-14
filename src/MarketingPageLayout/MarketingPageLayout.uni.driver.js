@@ -5,16 +5,61 @@ export const marketingPageLayoutDriverFactory = (base, body) => {
   return {
     ...baseUniDriverFactory(base, body),
 
-    /** Get the current count */
-    getCountText: async () =>
-      base.$(`[data-hook="${dataHooks.marketingPageLayoutCount}"]`).text(),
+    hasOverline: async () => {
+      return base
+        .$(`[data-hook="${dataHooks.marketingPageLayoutTextContentOverline}"]`)
+        .exists();
+    },
 
-    /** Click the button */
-    clickButton: async () =>
-      base.$(`[data-hook="${dataHooks.marketingPageLayoutButton}"]`).click(),
+    getOverlineText: async () => {
+      return base
+        .$(`[data-hook="${dataHooks.marketingPageLayoutTextContentOverline}"]`)
+        .text();
+    },
 
-    /** Get the button's text */
-    getButtonText: async () =>
-      base.$(`[data-hook="${dataHooks.marketingPageLayoutButton}"]`).text(),
+    hasHeader: async () => {
+      return base
+        .$(`[data-hook="${dataHooks.marketingPageLayoutTextContentHeader}"]`)
+        .exists();
+    },
+
+    getHeaderText: async () => {
+      return base
+        .$(`[data-hook="${dataHooks.marketingPageLayoutTextContentHeader}"]`)
+        .text();
+    },
+
+    hasSubtitle: async () => {
+      return base
+        .$(`[data-hook="${dataHooks.marketingPageLayoutTextContentSubtitle}"]`)
+        .exists();
+    },
+
+    getSubtitleText: async () => {
+      return base
+        .$(`[data-hook="${dataHooks.marketingPageLayoutTextContentSubtitle}"]`)
+        .text();
+    },
+
+    getTextContentItemsCount: async () => {
+      return base
+        .$(`[data-hook="${dataHooks.marketingPageLayoutTextContentTextList}"]`)
+        .$$(
+          `[data-hook="${dataHooks.marketingPageLayoutTextContentTextListItem}"]`,
+        )
+        .count();
+    },
+
+    hasFooter: async () => {
+      return base
+        .$(`[data-hook="${dataHooks.marketingPageLayoutFooterContentCell}"]`)
+        .exists();
+    },
+
+    hasImage: async () => {
+      return base
+        .$(`[data-hook="${dataHooks.marketingPageLayoutImageContentCell}"]`)
+        .exists();
+    },
   };
 };

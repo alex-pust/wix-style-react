@@ -10,7 +10,8 @@ class MarketingPageLayout extends React.PureComponent {
     const {
       dataHook,
       size,
-      action,
+      actions,
+      image,
       overline,
       header,
       subtitle,
@@ -22,7 +23,6 @@ class MarketingPageLayout extends React.PureComponent {
     return (
       <MarketingPageLayoutContext.Provider
         value={{
-          dataHook,
           size: validSize,
           overline,
           header,
@@ -31,7 +31,12 @@ class MarketingPageLayout extends React.PureComponent {
           contentPrefixIcon,
         }}
       >
-        <StandardLayout footer={footer} />
+        <StandardLayout
+          dataHook={dataHook}
+          actions={actions}
+          footer={footer}
+          image={image}
+        />
       </MarketingPageLayoutContext.Provider>
     );
   }
@@ -42,31 +47,45 @@ MarketingPageLayout.displayName = 'MarketingPageLayout';
 MarketingPageLayout.propTypes = {
   /** Applied as data-hook HTML attribute that can be used in the tests */
   dataHook: PropTypes.string,
-
-  /** A css class to be applied to the component's root element */
-  className: PropTypes.string,
-
-  size: PropTypes.oneOf(Object.keys(SIZES)),
-
   /**
-   *
+   * Sets explicitly the size of the page layout. It is useful to keep good responsiveness.
+   */
+  size: PropTypes.oneOf(Object.keys(SIZES)),
+  /**
+   * The content of the overline in the text area of the page
    */
   overline: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-
+  /**
+   * The content of the header in the text area of the page
+   */
   header: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-
+  /**
+   * The content of the subtitle in the text area of the page
+   */
   subtitle: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-
+  /**
+   * The list of text items in the text area of the page
+   */
   content: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.arrayOf(PropTypes.string),
   ]),
-
+  /**
+   * The icon that is used as the prefix for each text item in the text area of the page
+   */
   contentPrefixIcon: PropTypes.node,
-
+  /**
+   * A footer component. Use `MarketingPageTestimonialsFooter` or `MarketingPageFeaturesFooter`
+   */
   footer: PropTypes.node,
-
-  action: PropTypes.node,
+  /**
+   * An action component in the text area of the page
+   */
+  actions: PropTypes.node,
+  /**
+   * The image component in the image area of the page
+   */
+  image: PropTypes.node,
 };
 
 MarketingPageLayout.defaultProps = {};

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Heading, { APPEARANCES } from '../../Heading';
 import styles from './TextContent.st.css';
-import { SIZES } from '../constants';
+import { SIZES, dataHooks } from '../constants';
 import { isString } from '../../utils/StringUtils';
 import Text, { SIZES as TEXT_SIZES } from '../../Text';
 import MarketingPageLayoutContext from '../MarketingPageLayoutContext';
@@ -24,13 +24,22 @@ const contentTextSizeBySize = {
   [SIZES.large]: TEXT_SIZES.medium,
 };
 
-const HeadingContentItem = ({ contentValue, appearance, className }) => {
+const HeadingContentItem = ({
+  dataHook,
+  contentValue,
+  appearance,
+  className,
+}) => {
   if (!contentValue) {
     return null;
   }
   if (isString(contentValue)) {
     return (
-      <Heading className={className} appearance={appearance}>
+      <Heading
+        dataHook={dataHook}
+        className={className}
+        appearance={appearance}
+      >
         {contentValue}
       </Heading>
     );
@@ -38,14 +47,16 @@ const HeadingContentItem = ({ contentValue, appearance, className }) => {
   return <div className={className}>{contentValue}</div>;
 };
 
-const TextContentItem = ({ contentValue, textSize, className }) => {
+const TextContentItem = ({ dataHook, contentValue, textSize, className }) => {
   if (!contentValue) {
     return null;
   }
   if (isString(contentValue)) {
     return (
       <div className={className}>
-        <Text size={textSize}>{contentValue}</Text>
+        <Text dataHook={dataHook} size={textSize}>
+          {contentValue}
+        </Text>
       </div>
     );
   }
@@ -53,6 +64,7 @@ const TextContentItem = ({ contentValue, textSize, className }) => {
 };
 
 const TextContentList = ({
+  dataHook,
   content,
   contentPrefixIcon,
   textSize,
@@ -64,7 +76,7 @@ const TextContentList = ({
   }
   if (Array.isArray(content) && content.length > 0) {
     return (
-      <div className={className}>
+      <div data-hook={dataHook} className={className}>
         {content.map((contentItem, idx) => (
           <div key={`textItem${idx}`} className={styles.contentItemContainer}>
             {contentPrefixIcon && (
@@ -73,6 +85,7 @@ const TextContentList = ({
               </div>
             )}
             <TextContentItem
+              dataHook={dataHooks.marketingPageLayoutTextContentTextListItem}
               contentValue={contentItem}
               textSize={textSize}
               className={itemClassName}
@@ -82,7 +95,11 @@ const TextContentList = ({
       </div>
     );
   }
-  return <div className={className}>{content}</div>;
+  return (
+    <div data-hook={dataHook} className={className}>
+      {content}
+    </div>
+  );
 };
 
 const TextContent = () => {
@@ -95,29 +112,33 @@ const TextContent = () => {
     size,
   } = useContext(MarketingPageLayoutContext);
   return (
-    <div className={styles.root}>
+    <>
       <TextContentItem
+        dataHook={dataHooks.marketingPageLayoutTextContentOverline}
         className={styles.overLine}
         contentValue={overline}
         textSize={contentTextSizeBySize[size]}
       />
       <HeadingContentItem
+        dataHook={dataHooks.marketingPageLayoutTextContentHeader}
         contentValue={header}
         appearance={headerMapBySize[size]}
       />
       <HeadingContentItem
+        dataHook={dataHooks.marketingPageLayoutTextContentSubtitle}
         className={styles.subtitle}
         contentValue={subtitle}
         appearance={subtitleMapBySize[size]}
       />
       <TextContentList
+        dataHook={dataHooks.marketingPageLayoutTextContentTextList}
         className={styles.content}
         itemClassName={styles.contentItem}
         content={content}
         contentPrefixIcon={contentPrefixIcon}
         textSize={contentTextSizeBySize[size]}
       />
-    </div>
+    </>
   );
 };
 

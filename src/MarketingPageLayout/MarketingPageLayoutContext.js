@@ -2,7 +2,6 @@ import React from 'react';
 import { SIZES, DEFAULT_SIZE } from './constants';
 
 const MarketingPageLayoutContext = React.createContext({
-  dataHook: '',
   size: SIZES[DEFAULT_SIZE],
   overline: null,
   header: null,

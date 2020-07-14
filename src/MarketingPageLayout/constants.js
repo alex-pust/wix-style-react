@@ -1,13 +1,21 @@
 export const dataHooks = {
-  marketingPageLayoutCount: 'marketingPageLayout-count',
-  marketingPageLayoutButton: 'marketingPageLayout-button',
+  marketingPageLayoutTextContentOverline:
+    'marketingPageLayout-textContentOverline',
+  marketingPageLayoutTextContentHeader: 'marketingPageLayout-textContentHeader',
+  marketingPageLayoutTextContentSubtitle:
+    'marketingPageLayout-textContentSubtitle',
+  marketingPageLayoutTextContentTextList:
+    'marketingPageLayout-textContentTextList',
+  marketingPageLayoutTextContentTextListItem:
+    'marketingPageLayout-textContentTextListItem',
+  marketingPageLayoutImageContentCell: 'marketingPageLayout-imageContentCell',
+  marketingPageLayoutFooterContentCell: 'marketingPageLayout-footerContentCell',
 };
 
 export const SIZES = {
   small: 'small',
   medium: 'medium',
   large: 'large',
-  extraLarge: 'extraLarge',
 };
 
 export const DEFAULT_SIZE = 'large';

@@ -48,7 +48,9 @@ MarketingPageTestimonialsFooter.displayName = 'MarketingPageTestimonialsFooter';
 MarketingPageTestimonialsFooter.propTypes = {
   /** Applied as data-hook HTML attribute that can be used in the tests */
   dataHook: PropTypes.string,
-
+  /**
+   * The array of feedback texts with avatar and name of the person for each feedback.
+   */
   testimonials: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
