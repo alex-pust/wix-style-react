@@ -1,11 +1,57 @@
+import { debounce } from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DEFAULT_SIZE, SIZES } from './constants';
 import MarketingPageLayoutContext from './MarketingPageLayoutContext';
 import StandardLayout from './components/StandardLayout';
+import scrollIntoView from '../utils/scrollIntoView';
 
 /** Marketing Page Layout */
 class MarketingPageLayout extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.layoutRef = React.createRef();
+    this.state = {
+      showMoreInfo: false,
+    };
+  }
+
+  componentDidMount() {
+    if (this.layoutRef.current) {
+      this.scrolledElement = this.layoutRef.current.parentNode;
+      this.scrolledElement.addEventListener(
+        'scroll',
+        this._testMoreInfoBoundingRect,
+      );
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.scrolledElement) {
+      this.scrolledElement.removeEventListener(
+        'scroll',
+        this._testMoreInfoBoundingRect,
+      );
+      this.scrolledElement = undefined;
+    }
+  }
+
+  _testMoreInfoBoundingRect = debounce(() => {
+    if (this.scrolledElement) {
+      const layoutRect = this.layoutRef.current.getBoundingClientRect();
+      const parentRect = this.scrolledElement.getBoundingClientRect();
+      if (layoutRect.bottom > parentRect.bottom) {
+        this.setState({ showMoreInfo: true });
+      } else {
+        this.setState({ showMoreInfo: false });
+      }
+    }
+  }, 300);
+
+  _handleMoreInfo = focusedElement => {
+    scrollIntoView(this.scrolledElement, focusedElement);
+  };
+
   render() {
     const {
       dataHook,
@@ -32,10 +78,13 @@ class MarketingPageLayout extends React.PureComponent {
         }}
       >
         <StandardLayout
+          ref={this.layoutRef}
           dataHook={dataHook}
           actions={actions}
           footer={footer}
           image={image}
+          showMoreInfo={this.state.showMoreInfo}
+          onMoreInfo={this._handleMoreInfo}
         />
       </MarketingPageLayoutContext.Provider>
     );
@@ -88,6 +137,8 @@ MarketingPageLayout.propTypes = {
   image: PropTypes.node,
 };
 
-MarketingPageLayout.defaultProps = {};
+MarketingPageLayout.defaultProps = {
+  scrollReferenceType: 'window',
+};
 
 export default MarketingPageLayout;

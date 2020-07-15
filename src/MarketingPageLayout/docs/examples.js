@@ -1,5 +1,5 @@
 export const defaultViewport = `
-  <div style={{overflow: 'auto'}}>
+  <div style={{overflow: 'scroll'}}>
     <div style={{width: '1500px', height: '630px'}}>
       <MarketingPageLayout
         overline="Overline"
@@ -65,8 +65,8 @@ export const largeViewport = `
 `;
 
 export const mediumViewport = `
-  <div style={{overflow: 'auto'}}>
-    <div style={{width: '1100px', height: '630px'}}>
+  <div style={{overflow: 'scroll'}}>
+    <div style={{width: '1100px', height: '430px'}}>
       <MarketingPageLayout
         overline="Overline"
         header="Header Text"
