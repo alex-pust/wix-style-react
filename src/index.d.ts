@@ -435,8 +435,6 @@ export * from './clients';
 export * from './dnd-styles';
 export { default as dndStyles } from './dnd-styles';
 
-export * from './dnd-styles';
-
 export { default as MarketingPageLayout } from './MarketingPageLayout';
 export * from './MarketingPageLayout';
 
