@@ -16,7 +16,12 @@ import {
 import { storySettings } from '../test/storySettings';
 import allComponents from '../../../stories/utils/allComponents';
 
-import { largeViewport, mediumViewport, smallViewport } from './examples';
+import {
+  largeViewport,
+  mediumViewport,
+  smallViewport,
+  mediumViewportWithFeatures,
+} from './examples';
 
 import MarketingPageLayout from '..';
 
@@ -52,10 +57,17 @@ export default {
           title('Examples'),
 
           code({
-            title: 'Medium Size',
+            title: 'Medium Size With Testimonials',
             description: 'TODO: add description here...',
             compact: true,
             source: mediumViewport,
+          }),
+
+          code({
+            title: 'Medium Size With Features',
+            description: 'TODO: add description here...',
+            compact: true,
+            source: mediumViewportWithFeatures,
           }),
 
           code({

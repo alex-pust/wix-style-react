@@ -137,8 +137,6 @@ MarketingPageLayout.propTypes = {
   image: PropTypes.node,
 };
 
-MarketingPageLayout.defaultProps = {
-  scrollReferenceType: 'window',
-};
+MarketingPageLayout.defaultProps = {};
 
 export default MarketingPageLayout;
