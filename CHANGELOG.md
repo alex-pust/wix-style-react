@@ -15,8 +15,14 @@ Types of changes:
 1. **Lab** components and features that are still in a work in progress
 
 ## Next
+### Added
+- `<TagList/>` - create new component [#5628](https://github.com/wix/wix-style-react/pull/5628)
+
 ### Docs
 - `<SortableList/>` - create up-to-date docs [#5662](https://github.com/wix/wix-style-react/pull/5662)
+
+### Changed
+- `<SectionHelper />` - change scss to stylable [#5697](https://github.com/wix/wix-style-react/pull/5697)
 
 ## 8.30.0 - 2020-07-14
 ### Added
