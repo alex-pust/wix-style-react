@@ -17,6 +17,5 @@ describe(MarketingPageTestimonialsFooter.displayName, () => {
     const { driver } = render(<MarketingPageTestimonialsFooter />);
 
     expect(await driver.exists()).toBe(true);
-    expect(await driver.getButtonText()).toEqual('Click me!');
   });
 });
