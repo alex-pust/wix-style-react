@@ -170,3 +170,4 @@ export { default as HorizontalTimeline } from './HorizontalTimeline';
 export { default as StarsRatingBar } from './StarsRatingBar';
 export { default as MarketingPageLayout } from './MarketingPageLayout';
 export { default as MarketingPageTestimonialsFooter } from './MarketingPageTestimonialsFooter';
+export { default as MarketingPageFeaturesFooter } from './MarketingPageFeaturesFooter';

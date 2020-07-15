@@ -438,5 +438,9 @@ export { default as MarketingPageLayout } from './MarketingPageLayout';
 export * from './MarketingPageLayout';
 
 export { default as MarketingPageTestimonialsFooter } from './MarketingPageTestimonialsFooter';
+
+export { default as MarketingPageFeaturesFooter } from './MarketingPageFeaturesFooter';
+export * from './MarketingPageFeaturesFooter';
+
 export * from './MarketingPageTestimonialsFooter';
 

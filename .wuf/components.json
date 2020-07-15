@@ -242,6 +242,9 @@
   "MarketingLayout": {
     "path": "src/MarketingLayout"
   },
+  "MarketingPageFeaturesFooter": {
+    "path": "src/MarketingPageFeaturesFooter"
+  },
   "MarketingPageLayout": {
     "path": "src/MarketingPageLayout"
   },
@@ -378,10 +381,7 @@
     ]
   },
   "SortableList": {
-    "path": "src/SortableList",
-    "missingFiles": [
-      "docs"
-    ]
+    "path": "src/SortableList"
   },
   "StarsRatingBar": {
     "path": "src/StarsRatingBar"
