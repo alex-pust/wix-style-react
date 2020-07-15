@@ -435,18 +435,13 @@ export * from './clients';
 export * from './dnd-styles';
 export { default as dndStyles } from './dnd-styles';
 
-export { default as HorizontalTimeline } from './HorizontalTimeline';
-export * from './HorizontalTimeline';
-
 export * from './dnd-styles';
 
 export { default as MarketingPageLayout } from './MarketingPageLayout';
 export * from './MarketingPageLayout';
 
 export { default as MarketingPageTestimonialsFooter } from './MarketingPageTestimonialsFooter';
+export * from './MarketingPageTestimonialsFooter';
 
 export { default as MarketingPageFeaturesFooter } from './MarketingPageFeaturesFooter';
 export * from './MarketingPageFeaturesFooter';
-
-export * from './MarketingPageTestimonialsFooter';
-
